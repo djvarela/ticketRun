@@ -1,0 +1,261 @@
+@font-face {
+  font-family: Suse;
+  src: url("../font/suse-variablefont-wght.woff");
+  font-display: swap;
+}
+:root{
+    --modalBG :  #4b4152ae;
+}
+
+* {
+  box-sizing: border-box;
+}
+button {
+  cursor: pointer;
+}
+
+button.btn-close{
+    background-color: #734e8c;
+    width: 2rem;
+    color: #eee;
+    border-radius: 5px;
+    border: none;
+    height: 2rem;
+    padding: 0;
+    margin-bottom: 1em;
+}
+
+body {
+  background-color: #f2f7fa;
+  padding: 0;
+  margin: 0;
+  font-family: Suse;
+}
+
+.container {
+  width: 100%;
+
+  margin: auto;
+  height: 100%;
+  position: absolute;
+  inset: 0;
+  display: flex;
+  justify-content: space-between;
+
+  aside {
+    background-color: #fff;
+    height: 100%;
+    min-width: 15%;
+    display: flex;
+    flex-direction: column;
+
+    align-items: center;
+
+    .logo {
+      width: 100%;
+      height: 5rem;
+      overflow: hidden;
+      background-color: #7f67e9;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      position: relative;
+
+      h1 {
+        text-align: center;
+        color: #eee;
+        margin: 0;
+        font-weight: bold;
+      }
+    }
+  }
+
+  .aside-show {
+    display: flex;
+  }
+  .aside-hide {
+    display: none;
+  }
+
+  .content {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    align-items: center;
+    gap: 1em;
+
+    header {
+      background-color: #fff;
+      padding: 1em;
+      height: 5rem;
+      width: 100%;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+
+      .modal-new-ticket {
+        border: 1px solid red;
+        position: fixed;
+        inset: 0;
+        background-color: var(--modalBG);
+        display: none;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        padding: 1em;
+
+        form {
+          background-color: #eee;
+          width: 40%;
+          padding: 2em;
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+          gap: 1em;
+          border-radius: 5px;
+
+          .forms-elements {
+            gap: 1em;
+
+            width: 100%;
+            display: flex;
+            flex-direction: row;
+          }
+
+          span {
+            width: 100%;
+
+            display: flex;
+            flex-direction: column;
+
+            input {
+              padding: 0.5rem;
+            }
+          }
+       
+        button {
+          padding: 0.5rem;
+          width: 10rem;
+          background-color: #222;
+          color: #eee;
+          border-radius: 5px;
+        }}
+      }
+      .modal-new-ticket-active{
+        z-index: 1;
+        display: flex;
+      }
+
+      .menu {
+        width: 40px;
+        height: 40px;
+        background-image: url("/img/icons/menu.svg");
+        background-position: center;
+        background-size: 40px 40px;
+
+        cursor: pointer;
+      }
+      .user {
+        padding: 0.5rem;
+        width: 10rem;
+        margin-right: 5rem;
+        text-align: center;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 1em;
+        color: #8f8f8f;
+
+        position: relative;
+
+        small {
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          font-size: 1rem;
+          cursor: pointer;
+        }
+
+        small::after {
+          content: url("/img/icons/arrow.svg");
+          color: #ddd;
+          margin-left: 6px;
+          display: flex;
+        }
+
+        .avatar {
+          border: 1px solid #eee;
+          width: 40px;
+          height: 40px;
+          border-radius: 50%;
+          padding: 5px;
+          img {
+            width: 100%;
+            object-fit: scale-down;
+          }
+        }
+        .user-menu {
+          position: absolute;
+          top: 4em;
+          width: 10rem;
+
+          z-index: 1;
+          background-color: #e8e8e8;
+          display: none;
+
+          ul {
+            padding: 0;
+            width: 100%;
+            list-style: none;
+            display: flex;
+            align-content: center;
+            justify-content: center;
+
+            li {
+              color: #222;
+            }
+          }
+        }
+        .user-menu-active {
+          display: flex;
+        }
+      }
+    }
+
+    main {
+      background-color: #fff;
+      padding: 1em;
+      border: 1px solid #eee;
+      width: 95%;
+      height: 100%;
+    }
+  }
+}
+
+@media only screen and (max-width: 750px) {
+  .container {
+    .menu {
+      z-index: 1;
+    }
+
+    .content {
+      header {
+        .user {
+          margin-right: 0;
+        }
+      }
+    }
+    aside {
+      width: 90%;
+      position: absolute;
+      z-index: -1;
+    }
+    .aside-hide {
+      z-index: 1;
+      display: flex;
+    }
+    .aside-show {
+      z-index: -1;
+    }
+  }
+}
