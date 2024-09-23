@@ -1,9 +1,12 @@
-import { useState } from "react";
+import {  useState } from "react";
 import { AppContext } from "./AppContext";
+
 
 export const AppProvider = ({ children }) => {
   const [menuBurguer, setMenuBurguer] = useState(false);
   const [modalNewTicket, setModalNewTicket] = useState(false);
+
+
 
   const handleMenuBurguer = () => {
     setMenuBurguer(!menuBurguer);
@@ -13,15 +16,19 @@ export const AppProvider = ({ children }) => {
     setModalNewTicket(!modalNewTicket);
   };
 
+
+
   return (
     <AppContext.Provider
       value={{
         menuBurguer,
         handleMenuBurguer,
         setMenuBurguer,
-        modalNewTicket, 
+        modalNewTicket,
         setModalNewTicket,
-        handleModalTicket
+        handleModalTicket,
+      
+
       }}
     >
       {children}

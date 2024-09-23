@@ -28,6 +28,23 @@ export const FormsNewTicket = () => {
           <input type="email" name="email" defaultValue='testtest@asf.com' required />
         </span>
       </div>
+        <span>NIVEL DE URGENCIA</span>
+      <div className="forms-elements">
+      
+        <span>
+          <input type="radio" name="urgencia" id="alta"  defaultValue={'ALTA'}/>
+          <label htmlFor="alta">ALTA</label>
+        </span>
+        <span>
+          <input type="radio" id='baja' name="urgencia"  defaultValue={'BAJA'}/>
+          <label htmlFor="baja">BAJA</label>
+        </span>
+        <span>
+          <input type="radio" name="urgencia" id="critica"  defaultValue={'CRITICA'}/>
+          <label htmlFor="critica">CRITICA</label>
+        </span>
+
+      </div>
       <div className="forms-elements">
         <span>
           <label htmlFor="">Descripcion:</label>

@@ -17,20 +17,25 @@ export const links: LinksFunction = () => [
 ];
 export const action = async ({ request }) => {
 
- 
+
   const form = await request.formData();
-  const title = form.get('titulo') ;
-  const body = form.get('contenido') ;
+  const titulo = form.get('titulo');
+  const body = form.get('contenido');
+  const nombre = form.get('nombre');
+  const apellido = form.get('apellido');
 
   await Prisma.ticket.create({
-    data:{
-      title: title,
-      content: body
+    data: {
+      titulo: titulo,
+      nombre: nombre,
+      apellido: apellido,
+      email: form.get('email'),
+      urgencia : form.get('urgencia'),
+      contenido: body
     }
   })
 
-return true
-    // const post = await db.post.create({ data: fields });
+  return true
 }
 
 
@@ -45,7 +50,7 @@ export function Layout({ children }: { children: React.ReactNode }) {
         <Links />
       </head>
       <body>
-        
+
         <AppProvider>
           <Container>{children}</Container>
         </AppProvider>

@@ -31,7 +31,7 @@ export const Header = () => {
       <span>
         <button
         onClick={handleModalTicket}
-        >X</button>
+        >+</button>
 
         <div className={  `modal-new-ticket ${  modalNewTicket ? 'modal-new-ticket-active': null  }`   }>
           <button

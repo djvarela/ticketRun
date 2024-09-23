@@ -14,6 +14,17 @@ button {
   cursor: pointer;
 }
 
+table.table{
+    border-collapse: collapse;   
+    border: 1px solid #222;
+    width: 100%;
+
+   td,th{
+    text-align: center;
+      border-bottom: 1px solid #222;
+
+    }
+}
 button.btn-close{
     background-color: #734e8c;
     width: 2rem;
@@ -120,6 +131,14 @@ body {
             width: 100%;
             display: flex;
             flex-direction: row;
+          }
+          .forms-elements:nth-child(5){
+            padding: .6rem;
+            
+            span{
+              justify-content: center;
+              flex-direction: row;
+            }
           }
 
           span {
@@ -231,6 +250,12 @@ body {
     }
   }
 }
+
+.tickets{
+ 
+
+}
+
 
 @media only screen and (max-width: 750px) {
   .container {

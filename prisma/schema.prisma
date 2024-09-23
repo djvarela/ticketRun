@@ -14,13 +14,23 @@ datasource db {
 }
 
 
-model Ticket {
-  id        Int      @id @default(autoincrement())
-  createdAt DateTime @default(now())
-  updatedAt DateTime @updatedAt
-  title     String   @db.VarChar(255)
-  content   String?
+
+model ticket {
+  id        Int       @id @default(autoincrement())
+  titulo    String
+  nombre    String
+  apellido  String?
+  email     String?
+  urgencia  urgencia  @default(BAJA) // Ahora usa el enum urgencia
+  contenido String?
+  createdAt DateTime  @default(now())
+  updatedAt DateTime  @updatedAt
+}
 
 
+enum urgencia {
+  ALTA
+  BAJA
+  CRITICA
 }
 
